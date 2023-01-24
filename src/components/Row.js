@@ -1,3 +1,4 @@
+// This file is the same as source
 import React from 'react';
 
 const Row = (props) => {

@@ -1,10 +1,11 @@
+//The fetchData was written by me and the rest has been refactored
 import React, { Component } from 'react';
-import './App.css';
 import Header from './components/Header';
 import Button from './components/Button';
 import Row from './components/Row';
 import TableBody from './components/TableBody';
 import LeagueInfo from './components/LeagueInfo';
+import './App.css';
 
 class App extends Component {
 
@@ -20,14 +21,14 @@ class App extends Component {
       },
       buttons: []
     }
-    this.handleLeagueClick = this.handleLeagueClick.bind(this);
+    this.onButtonClick = this.onButtonClick.bind(this);
   }
 
-  handleLeagueClick(e) {
+  onButtonClick = (e) => {
     const newId = e.target.getAttribute('data-leagueid');
     this.setState({
       leagueId: newId
-    }, () => { this.fetchData() });
+    }, () => this.fetchData());
   }
 
   fetchData = async () => {
@@ -56,11 +57,11 @@ class App extends Component {
 
   componentDidMount() {
     this.fetchData();
-    for (let key in this.state.leagues) {
-      this.state.buttons.push(
-        <Button handleClick={this.handleLeagueClick} key={this.state.leagues[key]} leagueId={this.state.leagues[key]} text={key} />
-      )
-    }
+    this.setState({
+      buttons: Object.keys(this.state.leagues).map(key => (
+        <Button handleClick={this.onButtonClick} key={this.state.leagues[key]} leagueId={this.state.leagues[key]} text={key} />
+      ))
+    });
   }
 
   render() {
