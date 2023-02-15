@@ -14,7 +14,4 @@ Screenshot:
 
 ![screenshot](https://user-images.githubusercontent.com/45516995/214428896-7f35d114-e222-43cf-9d1d-76328f62e843.png)
 
-References:
-https://github.com/dastbelaraki/react-football
 
-Contribution estimate: 25-30%
