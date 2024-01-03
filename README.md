@@ -4,14 +4,18 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Soccer stats allows users to view the positions of soccer teams and their respective stats for the current Premier League and Ligue1.
 
-To install the app run:
+To install the react.js frontend, open a terminal in the `client` directory and run: 
 ### `npm install`
 
-To use the app run:
+followed by:
+### `npm start`
+
+
+To install the express.js backend, open a terminal in the `server` directory and run:
 ### `npm start`
 
 Screenshot:
 
-![screenshot](https://user-images.githubusercontent.com/45516995/214428896-7f35d114-e222-43cf-9d1d-76328f62e843.png)
+![screenshot](soccer-stats-capture.PNG)
 
 
