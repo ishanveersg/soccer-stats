@@ -1,4 +1,3 @@
-// This file has been modified to make the app display what i want
 import React from 'react';
 import Ligue1 from '../images/Ligue1.png';
 import PremierLeague from '../images/PremierLeague.png'

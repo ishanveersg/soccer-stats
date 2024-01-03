@@ -1,5 +1,3 @@
-//This has been slightly modified
-
 import React from 'react'
 
 const TableBody = (props) => {
