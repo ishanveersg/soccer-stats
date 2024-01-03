@@ -32,18 +32,18 @@ class App extends Component {
   }
 
   fetchData = async () => {
-    const Token = '4967e52fb7a74be5b8a76ade2ec5d9ed',
-      leagueId = this.state.leagueId,
-      URL = 'https://api.football-data.org/v2/competitions/' + leagueId + '/standings';
-
+    const leagueId = this.state.leagueId;
+    const URL = `http://localhost:5000/api/standings/${leagueId}`;
+  
     try {
-      const response = await fetch(URL, { headers: { 'X-Auth-Token': Token } });
+      const response = await fetch(URL);
       const responseJson = await response.json();
       const newRows = responseJson.standings[0].table.map((item, index) => {
         const { position, playedGames, won, draw, lost, goalsFor, goalsAgainst, goalDifference, points } = item;
-        const {crestUrl, name} = item.team;
+        const {crest, name} = item.team;
+        console.log(responseJson);
         return (
-          <Row key={index} position={position} crestURI={crestUrl} teamName={name} playedGames={playedGames} wins={won} draws={draw} losses={lost} goalsFor={goalsFor} goalsAgainst={goalsAgainst} goalDifference={goalDifference} points={points} />
+          <Row key={index} position={position} crestURI={crest} teamName={name} playedGames={playedGames} wins={won} draws={draw} losses={lost} goalsFor={goalsFor} goalsAgainst={goalsAgainst} goalDifference={goalDifference} points={points} />
         );
       });
       this.setState({
@@ -54,6 +54,7 @@ class App extends Component {
       console.error(error);
     }
   }
+  
 
   componentDidMount() {
     this.fetchData();
