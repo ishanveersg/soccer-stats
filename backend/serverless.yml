@@ -1,0 +1,23 @@
+service: soccer-stats-backend
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: ca-central-1
+
+functions:
+  app:
+    handler: handler.handler # Points to the handler function exported in handler.js
+    events:
+      - httpApi:
+          path: /api/standings/{leagueId} # The path for your endpoint
+          method: get # The HTTP method for your endpoint
+
+package:
+  individually: true
+
+plugins:
+  - serverless-plugin-common-excludes
+  - serverless-plugin-include-dependencies
+

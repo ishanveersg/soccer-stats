@@ -33,7 +33,7 @@ class App extends Component {
 
   fetchData = async () => {
     const leagueId = this.state.leagueId;
-    const URL = `http://localhost:5000/api/standings/${leagueId}`;
+    const URL = `https://awhouj8reh.execute-api.ca-central-1.amazonaws.com/api/standings/${leagueId}`;
   
     try {
       const response = await fetch(URL);

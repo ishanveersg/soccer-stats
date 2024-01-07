@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/static/css/main.67830bc4.css",
+    "main.js": "/static/js/main.d6ef8118.js",
+    "static/media/PremierLeague.png": "/static/media/PremierLeague.dbf79ca3b87669532e0b.png",
+    "static/media/Ligue1.png": "/static/media/Ligue1.58b7ac8b57f5f8755a20.png",
+    "index.html": "/index.html",
+    "main.67830bc4.css.map": "/static/css/main.67830bc4.css.map",
+    "main.d6ef8118.js.map": "/static/js/main.d6ef8118.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.67830bc4.css",
+    "static/js/main.d6ef8118.js"
+  ]
+}
